@@ -72,7 +72,7 @@ module.exports = function(grunt) {
                 tasks: ["jshint", "uglify"]
             },
 
-            files: ["<%= dirs.base %>*.html"]
+            files: ["<%= dirs.base %>/*.html"]
         },
 
         // Linting
