@@ -157,7 +157,7 @@ module.exports = function(grunt) {
         rsync: {
             options: {
                 args: ["--verbose"],
-                exclusions: [
+                exclude: [
                     "Thumbs.db",
                     ".git",
                     ".gitignore"
@@ -191,7 +191,7 @@ module.exports = function(grunt) {
     // Start server and watch for changes
     grunt.registerTask("default", ["watch"]);
 
-     // Run build
+    // Runserver + watch
     grunt.registerTask("runserver", ["connect", "watch"]);
 
     // Run build
@@ -201,15 +201,15 @@ module.exports = function(grunt) {
     grunt.registerTask("optimize", ["shell:imagemagick"]);
 
     // Deploy Methods
-    grunt.registerTask("ftp", ["build", "optimize", "ftpush"]);
-    grunt.registerTask("rsync", ["build", "optimize", "rsync"]);
+    grunt.registerTask("ftp", ["build", "ftpush"]);
+    grunt.registerTask("rsync-b", ["build","rsync"]);
 
     // Aliases Tasks
     grunt.registerTask("rs", ["runserver"]);
     grunt.registerTask("b",  ["build"]);
     grunt.registerTask("o",  ["optimize"]);
     grunt.registerTask("f",  ["ftp"]);
-    grunt.registerTask("r",  ["rsync"]);
+    grunt.registerTask("r",  ["rsync-b"]);
 
 };
 
