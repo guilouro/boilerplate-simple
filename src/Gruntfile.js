@@ -95,8 +95,11 @@ module.exports = function(grunt) {
             dist: {
                 files: {
                     // Seu script do projeto
-                    "<%= dirs.jsfinal %>/site.min.js": ["<%= dirs.js %>/main.js","<%= dirs.js %>/legacy/*"],
-                    "<%= dirs.jsfinal %>/bootstrap.min.js": ["<%= dirs.js %>/bootstrap/**/*.js"]
+                    "<%= dirs.jsfinal %>/site.min.js": [
+                        // "<%= dirs.js %>/bootstrap/**/*.js",
+                        "<%= dirs.js %>/main.js",
+                        "<%= dirs.js %>/legacy/*"
+                    ],
                     // CSS para concatenar                   
                 }
             }
